@@ -1,0 +1,110 @@
+<header>
+	
+	<section class="md-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-6 col-md-4 offset-md-4 col-lg-3 offset-lg-0 col-xl-3">
+					<div class="md-logo text-center">
+						<a href="index.php">
+							<h1>Web</h1>
+							<img class="img-fluid img-c logo-g animate__animated animate__backInDown" src="">
+						</a>	
+					</div>
+				</div>
+
+				<div class="col-6 col-md-12 col-lg-9 col-xl-8 offset-xl-1">
+					
+					<!-- PC + Laptop + tablet-->
+					<div class="md-menu d-none d-md-block">	
+						<ul class="nav justify-content-end ul-menu animate__animated animate__fadeInDown">
+							<li class="nav-item">
+								<a class="nav-link <?= $menuActive[0]; ?>" href="index.php">Inicio
+									<div class="icon-menu"></div>
+								</a>								
+							</li>
+							<li class="nav-item">
+								<a class="nav-link <?= $menuActive[1]; ?>" href="aboutus.php">Nosotros
+									<div class="icon-menu"></div>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link <?= $menuActive[2].$menuActive[3]; ?>" href="products.php">Productos
+									<div class="icon-menu"></div>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link <?= $menuActive[4]; ?>" href="buy.php">¿Donde comprar?
+									<div class="icon-menu"></div>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link <?= $menuActive[5]; ?>" href="contactus.php">Contáctenos
+									<div class="icon-menu"></div>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="linkRedes" href="" target="_blank">
+									<div class="icon-header-facebook"></div>
+								</a>
+								<a class="linkRedes" href="" target="_blank">
+									<div class="icon-header-instagram"></div>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+
+					<!-- Movil -->
+					<div class="md-menu d-block d-md-none">
+						<button type="button" class="btn btn-movil-menu bg-blue">
+							<img class="menu-open img-fluid" src="<?= $public['img']; ?>home/menu_open.png">
+							<img class="menu-close img-fluid" src="<?= $public['img']; ?>home/menu_open.png">
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</header>
+
+
+<!-- Movil -->
+<div class="bg-menu-movil d-block d-md-none">
+
+	<ul class="nav flex-column">
+		<li class="nav-item">
+			<div class="md-menu d-block d-md-none">
+				<button type="button" class="btn btn-movil-menu-close bg-blue">
+					<img class="menu-open img-fluid" src="<?= $public['img']; ?>home/menu_close.png">
+					<img class="menu-close img-fluid" src="<?= $public['img']; ?>home/menu_close.png">
+				</button>
+			</div>		
+		</li>
+		<li class="nav-item">
+			<a class="nav-link <?= $menuActive[0]; ?>" href="index.php">Inicio</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link <?= $menuActive[1]; ?>" href="aboutus.php">Nosotros</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link <?= $menuActive[2].$menuActive[3]; ?>" href="products.php">Productos</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link <?= $menuActive[4]; ?>" href="buy.php">¿Donde comprar?</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link <?= $menuActive[5]; ?>" href="contactus.php">Contáctenos</a>
+		</li>
+
+		<li class="nav-item text-center">
+			<a href="" class="fb-menu-movil" target="_blank">
+				<div class="icon-header-facebook"></div>
+			</a>
+			<a href="" class="fb-menu-movil" target="_blank">
+				<div class="icon-header-instagram"></div>
+			</a>		
+		</li>
+
+
+	</ul>	
+</div>
