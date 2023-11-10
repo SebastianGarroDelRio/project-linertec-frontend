@@ -1,17 +1,18 @@
-//si en caso estuviera enlazada a una tabla, se realiza el import
-//ejemplo
-//Tabla: tipoDocumento
-//1.RUC
-//2.DNI
-// import { tipoDocumento } from "./tipoDocumento.model";
+
+import { Estado } from "./estado.model";
+import { TipoDocumento } from "./tipodocumento.model";
+
 
 export class Cliente {
     idCliente?: number;
-    nombre?:string;
-    apellidoPaterno?:string;
-    apellidoMaterno?:string;
-    dni?:string;
+    nombreCliente?:string;
     correo?:string;
     telefono?:string;
-    fechaNacimiento?:Date; 
+    direccion?:string;
+    nombreContacto?:string;
+    telefonoContacto?:string;
+    fechaNacimiento?:Date;
+    fechaRegistro?:Date;
+    tipodocumento?:TipoDocumento;
+    estado?:Estado;
 }

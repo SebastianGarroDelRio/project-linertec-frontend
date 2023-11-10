@@ -30,30 +30,6 @@ export class UtilService {
   //   return this.http.get<DataCatalogo[]>(baseUrlUtil+"/listaCategoriaDeLibro");
   // }
 
-  // listaTipoProveedor():Observable<DataCatalogo[]>{
-  //   return this.http.get<DataCatalogo[]>(baseUrlUtil+"/listaTipoProveedor");
-  // }
-
-  // listaModalidadAlumno():Observable<DataCatalogo[]>{
-  //   return this.http.get<DataCatalogo[]>(baseUrlUtil+"/listaModalidadAlumno");
-  // }
-
-  // listaGradoAutor():Observable<DataCatalogo[]>{
-  //   return this.http.get<DataCatalogo[]>(baseUrlUtil+"/listaGradoAutor");
-  // }
-
-  // listaTipoLibroRevista():Observable<DataCatalogo[]>{
-  //   return this.http.get<DataCatalogo[]>(baseUrlUtil+"/listaTipoLibroRevista");
-  // }
-
-  // listaTipoSala():Observable<DataCatalogo[]>{
-  //   return this.http.get<DataCatalogo[]>(baseUrlUtil+"/listaTipoSala");
-  // }
-
-  // listaSede():Observable<DataCatalogo[]>{
-  //   return this.http.get<DataCatalogo[]>(baseUrlUtil+"/listaSede");
-  // }
-
 }
 
 

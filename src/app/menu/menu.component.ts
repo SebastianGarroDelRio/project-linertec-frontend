@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Opcion } from '../security/opcion';
 import { TokenService } from '../security/token.service';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -11,27 +11,30 @@ import { TokenService } from '../security/token.service';
 export class MenuComponent implements OnInit {
 
   isLogged = false;
+  opcDashBoard : Opcion[] = [];
   opcUsuarios : Opcion[] = [];
   opcServicios : Opcion[] = [];
   opcClientes : Opcion[] = [];
   opcSolicitudes : Opcion[] = [];
-  //
-  opcNegocio : Opcion[] = [];
+  opcInventario : Opcion[] = [];
+  opcProveedor : Opcion[] = [];
+  
+  constructor(private tokenService: TokenService, private router: Router) {
 
-  constructor(private tokenService: TokenService) {
     console.log("MenuComponent >>> constructor >>> " + this.tokenService.getToken());
   }
 
   ngOnInit() {
     console.log("MenuComponent >>> ngOnInit >>> ");
 
-    this.opcUsuarios = this.tokenService.getOpciones().filter( x => x.tipo === 1);
-    this.opcServicios = this.tokenService.getOpciones().filter( x => x.tipo === 2);
-    this.opcClientes = this.tokenService.getOpciones().filter( x => x.tipo === 3);
-    this.opcSolicitudes = this.tokenService.getOpciones().filter( x => x.tipo === 4);
-    //
-    this.opcNegocio = this.tokenService.getOpciones().filter( x => x.tipo === 5);
-
+    this.opcDashBoard = this.tokenService.getOpciones().filter( x => x.tipo === 1);
+    this.opcClientes = this.tokenService.getOpciones().filter( x => x.tipo === 2);
+    this.opcSolicitudes = this.tokenService.getOpciones().filter( x => x.tipo === 3);
+    this.opcServicios = this.tokenService.getOpciones().filter( x => x.tipo === 4);
+    this.opcInventario = this.tokenService.getOpciones().filter( x => x.tipo === 6);
+    this.opcUsuarios = this.tokenService.getOpciones().filter( x => x.tipo === 7);
+    this.opcProveedor = this.tokenService.getOpciones().filter( x => x.tipo === 5);
+    
     console.log("MenuComponent >>> ngOnInit >>> " + this.tokenService.getToken());
     if (this.tokenService.getToken()) {
       console.log("MenuComponent >>> this.isLogged = true >>> ");
@@ -44,7 +47,8 @@ export class MenuComponent implements OnInit {
 
   onLogOut(): void {
     this.tokenService.logOut();
-    window.location.reload();
+    //window.location.reload();
+    this.router.navigate(['/login']);
   }
 
 }

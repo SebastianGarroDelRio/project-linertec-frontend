@@ -24,6 +24,19 @@ import { CrudServicioComponent } from './components/crud-servicio/crud-servicio.
 import { HeaderComponent } from './public/home/header/header.component';
 import { BodyComponent } from './public/home/body/body.component';
 import { FooterComponent } from './public/home/footer/footer.component';
+import { WebInicioComponent } from './public/components/inicio/inicio.component';
+import { WebServicioComponent } from './public/components/servicio/servicio.component';
+import { WebProyectoComponent } from './public/components/proyecto/proyecto.component';
+import { WebNosotrosComponent } from './public/components/nosotros/nosotros.component';
+import { WebContactoComponent } from './public/components/contacto/contacto.component';
+
+
+import { LayoutWeb } from './layouts/web/layoutweb.component';
+import { LayoutIntranet } from './layouts/intranet/layoutintranet.component';
+import { IntranetHeaderComponent } from './public/home/header/IntranetHeader.component';
+import { DashBoardComponent } from './components/dashboard/dashboard.component';
+import { CrudCobranzaComponent } from './components/crud-cobranza/crud-cobranza.component';
+
 
 @NgModule({
   declarations: [
@@ -35,10 +48,23 @@ import { FooterComponent } from './public/home/footer/footer.component';
     CrudClienteComponent,
     CrudUsuarioComponent,
     CrudServicioComponent,
-
+    
+    DashBoardComponent,
+    
     HeaderComponent,
     BodyComponent,
-    FooterComponent
+    FooterComponent,
+    WebInicioComponent,
+    WebServicioComponent,
+    WebProyectoComponent,
+    WebNosotrosComponent,
+    WebContactoComponent,
+
+    //agregado  4/11/2023
+    LayoutWeb,
+    LayoutIntranet,
+    IntranetHeaderComponent
+    
   ],
   imports: [
     BrowserModule,

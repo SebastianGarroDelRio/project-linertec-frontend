@@ -1,7 +1,5 @@
-// import { Usuario } from "./usuario.model";
 
 export class Usuario {
-
     idUsuario?: number;
     nombres?: string;
     apellidos?: string;
@@ -12,5 +10,4 @@ export class Usuario {
     fechaRegistro?: Date;
     fechaNacimiento?: Date;
     direccion?: string;
-
 }

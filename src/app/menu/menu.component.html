@@ -16,8 +16,20 @@
       <li class="nav-item" *ngIf="!isLogged">
           <a class="nav-link"  routerLink="/login"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
       </li>
-      <li class="nav-item" *ngIf="isLogged" (click)="onLogOut()">
-          <a class="nav-link" style="cursor: pointer;"><i class="fas fa-door-open" ></i> Cerrar Sesión</a>
+
+
+      <li class="nav-item dropdown" *ngIf="isLogged">
+        <a
+          class="nav-link "
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-expanded="false"
+          routerLink="DashBoard"
+        >
+          DashBoard 
+        </a>
       </li>
 
 
@@ -30,15 +42,17 @@
           data-toggle="dropdown"
           aria-expanded="false"
         >
-          Usuarios 
+          Clientes 
         </a>
 
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a *ngFor="let item of opcUsuarios"  routerLink="/{{ item.ruta }}" class="dropdown-item"  >
-                   {{ item.nombre }} 
-           </a>
-      </div>
+             <a *ngFor="let item of opcClientes"  routerLink="/{{ item.ruta }}" class="dropdown-item"  >
+                      {{ item.nombre }} 
+              </a>
+        </div>
       </li>
+      
+
 
 
       <li class="nav-item dropdown" *ngIf="isLogged">
@@ -61,27 +75,6 @@
       </li>
 
 
-      <li class="nav-item dropdown" *ngIf="isLogged">
-        <a
-          class="nav-link dropdown-toggle"
-          href="#"
-          id="navbarDropdown"
-          role="button"
-          data-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Clientes 
-        </a>
-
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-             <a *ngFor="let item of opcClientes"  routerLink="/{{ item.ruta }}" class="dropdown-item"  >
-                      {{ item.nombre }} 
-              </a>
-        </div>
-      </li>
-     
-
-
     <li class="nav-item dropdown" *ngIf="isLogged">
       <a
         class="nav-link dropdown-toggle"
@@ -102,8 +95,6 @@
     </li>
 
 
-
-    <!---->
     <li class="nav-item dropdown" *ngIf="isLogged">
       <a
         class="nav-link dropdown-toggle"
@@ -113,16 +104,60 @@
         data-toggle="dropdown"
         aria-expanded="false"
       >
-        Negocio
+        Proveedor 
       </a>
 
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-           <a *ngFor="let item of opcNegocio"  routerLink="/{{ item.ruta }}" class="dropdown-item"  >
+           <a *ngFor="let item of opcProveedor"  routerLink="/{{ item.ruta }}" class="dropdown-item"  >
                     {{ item.nombre }} 
             </a>
       </div>
     </li>
-    <!---->
+
+    <li class="nav-item dropdown" *ngIf="isLogged">
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        id="navbarDropdown"
+        role="button"
+        data-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Inventario
+      </a>
+
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+           <a *ngFor="let item of opcInventario"  routerLink="/{{ item.ruta }}" class="dropdown-item"  >
+                    {{ item.nombre }} 
+            </a>
+      </div>
+    </li>
+
+    <li class="nav-item dropdown" *ngIf="isLogged">
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        id="navbarDropdown"
+        role="button"
+        data-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Usuarios 
+      </a>
+
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a *ngFor="let item of opcUsuarios"  routerLink="/{{ item.ruta }}" class="dropdown-item"  >
+                 {{ item.nombre }} 
+         </a>
+         
+      </div>
+    </li>
+    
+    
+    <li class="nav-item" *ngIf="isLogged" (click)="onLogOut()">
+      <a class="nav-link" style="cursor: pointer;"><i class="fas fa-door-open" ></i> Cerrar Sesión</a>
+  </li>
+    
   </ul>
 
 

@@ -5,70 +5,121 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login.component';
 import { IndexComponent } from './index/index.component';
 
-import { CrudClienteComponent } from './components/crud-cliente/crud-cliente.component';
+
 import { CrudUsuarioComponent } from './components/crud-usuario/crud-usuario.component';
 import { CrudServicioComponent } from './components/crud-servicio/crud-servicio.component';
 
+import { WebInicioComponent } from './public/components/inicio/inicio.component';
+import { WebContactoComponent } from './public/components/contacto/contacto.component';
+import { WebProyectoComponent } from './public/components/proyecto/proyecto.component';
+import { WebNosotrosComponent } from './public/components/nosotros/nosotros.component';
 
-// import { AgregarAlumnoComponent } from './components/agregar-alumno/agregar-alumno.component';
-// import { AgregarLibroComponent } from './components/agregar-libro/agregar-libro.component';
-// import { AgregarTesisComponent } from './components/agregar-tesis/agregar-tesis.component';
-// import { AgregarAutorComponent } from './components/agregar-autor/agregar-autor.component';
-// import { AgregarSalaComponent } from './components/agregar-sala/agregar-sala.component';
-// import { AgregarProveedorComponent } from './components/agregar-proveedor/agregar-proveedor.component';
-// import { ConsultaAlumnoComponent } from './components/consulta-alumno/consulta-alumno.component';
-// import { ConsultaLibroComponent } from './components/consulta-libro/consulta-libro.component';
-// import { ConsultaTesisComponent } from './components/consulta-tesis/consulta-tesis.component';
-// import { ConsultaAutorComponent } from './components/consulta-autor/consulta-autor.component';
-// import { ConsultaSalaComponent } from './components/consulta-sala/consulta-sala.component';
-// import { ConsultaProveedorComponent } from './components/consulta-proveedor/consulta-proveedor.component';
-// import { CrudAlumnoComponent } from './components/crud-alumno/crud-alumno.component';
-// import { CrudLibroComponent } from './components/crud-libro/crud-libro.component';
-// import { CrudTesisComponent } from './components/crud-cliente/crud-cliente.component';
-// import { CrudAutorComponent } from './components/crud-autor/crud-autor.component';
-// import { CrudSalaComponent } from './components/crud-usuario/crud-usuario.component';
-// import { CrudProveedorComponent } from './components/crud-proveedor/crud-proveedor.component';
-// import { PrestamoComponent } from './components/prestamo/prestamo.component';
-// import { AgregarPruebaComponent } from './components/agregar-prueba/agregar-prueba.component';
-// import { DevolucionComponent } from './components/devolucion/devolucion.component';
+
+import { WebServicioComponent } from './public/components/servicio/servicio.component';
+import { LayoutWeb } from './layouts/web/layoutweb.component';
+import { LayoutIntranet } from './layouts/intranet/layoutintranet.component';
+import { CrudClienteComponent } from './components/crud-cliente/crud-cliente.component';
+import { CrudContratoComponent } from './components/crud-contrato/crud-contrato.component';
+import { CrudDetalleServicioComponent } from './components/crud-detalleservicio/crud-detalleservicio.component';
+import { CrudCategoriaComponent } from './components/crud-categoria/crud-categoria.component';
+import { CrudProductoComponent } from './components/crud-producto/crud-producto.component';
+import { CrudProveedorComponent } from './components/crud-proveedor/crud-proveedor.component';
+import { DashBoardComponent } from './components/dashboard/dashboard.component';
+import { CrudCobranzaComponent } from './components/crud-cobranza/crud-cobranza.component';
+import { CrudCobroComponent } from './components/crud-cobro/crud-cobro.component';
 
 const routes: Routes = [
-  {path:"crudCliente", component:CrudClienteComponent },
-  {path:"crudUsuario", component:CrudUsuarioComponent },
-  {path:"crudServicio", component:CrudServicioComponent },
-  { path: '', component: IndexComponent },
-  { path: 'login', component: LoginComponent },
-  { path: '**', redirectTo: '', pathMatch: 'full' }
+  {
+    path: '',
+    component: LayoutWeb,
+    children: [
+      {
+        path: 'webInicio',
+        component: WebInicioComponent,
+      },
+      {
+        path: 'webServicio',
+        component: WebServicioComponent,
+      },
+      {
+        path: 'webProyecto',
+        component: WebProyectoComponent,
+      },
+      {
+        path: 'webNosotros',
+        component: WebNosotrosComponent,
+      },
+      { 
+        path: 'webContacto', 
+        component: WebContactoComponent 
+      },
+    ],
+  },
 
-  // {path:"agregarAlumno", component:AgregarAlumnoComponent },
-  // {path:"agregarLibro", component:AgregarLibroComponent },
-  // {path:"agregarTesis", component:AgregarTesisComponent },
-  // {path:"agregarAutor", component:AgregarAutorComponent },
-  // {path:"agregarSala", component:AgregarSalaComponent },
-  // {path:"agregarProveedor", component:AgregarProveedorComponent },
-  // {path:"agregarPrueba", component:AgregarPruebaComponent },
-  // {path:"consultaAlumno", component:ConsultaAlumnoComponent },
-  // {path:"consultaLibro", component:ConsultaLibroComponent },
-  // {path:"consultaTesis", component:ConsultaTesisComponent },
-  // {path:"consultaAutor", component:ConsultaAutorComponent },
-  // {path:"consultaSala", component:ConsultaSalaComponent },
-  // {path:"consultaProveedor", component:ConsultaProveedorComponent },
-  // {path:"crudAlumno", component:CrudAlumnoComponent },
-  // {path:"crudLibro", component:CrudLibroComponent },
-  // {path:"crudTesis", component:CrudTesisComponent },
-  // {path:"crudAutor", component:CrudAutorComponent },
-  // {path:"crudSala", component:CrudSalaComponent },
-  // {path:"crudProveedor", component:CrudProveedorComponent },
-  // {path:"prestamo", component:PrestamoComponent },
-  // {path:"devolucion", component:DevolucionComponent },
-  // { path: '', component: IndexComponent },
-  // { path: 'login', component: LoginComponent },
-  // { path: '**', redirectTo: '', pathMatch: 'full' }
+  { path: 'login', component: LoginComponent },
+
+  {
+    path: 'intranet',
+    component: LayoutIntranet,
+    children: [
+      { 
+        path: 'inicio', 
+        component: IndexComponent 
+      },
+      {
+        path: 'verMantenimientoCategoria',
+        component: CrudCategoriaComponent,
+      },
+      {
+        path: 'verMantenimientoCliente',
+        component: CrudClienteComponent,
+      },
+      {
+        path: 'verMantenimientoContrato',
+        component: CrudContratoComponent,
+      },
+      {
+        path: 'verMantenimientoDetalleServicio',
+        component: CrudDetalleServicioComponent,
+      },
+      {
+        path: 'verMantenimientoProducto',
+        component: CrudProductoComponent,
+      },
+      {
+        path: 'verMantenimientoProveedor',
+        component: CrudProveedorComponent,
+      },
+      {
+        path: 'verMantenimientoServicio',
+        component: CrudServicioComponent,
+      },
+      {
+        path: 'verMantenimientoUsuario',
+        component: CrudUsuarioComponent,
+      },
+      {
+        path: 'verMantenimientoCobranza',
+        component: CrudCobranzaComponent,
+      },
+      {
+        path: 'verMantenimientoCobros',
+        component: CrudCobroComponent,
+      },
+      {
+        path: 'DashBoard',
+        component: DashBoardComponent,
+      },
+      {
+        path: '**',
+        component: WebInicioComponent,
+      },
+    ],
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-
 export class AppRoutingModule {}

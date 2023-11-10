@@ -1,0 +1,14 @@
+/* header.component.css */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333; /* Cambia esto a tu estilo de fondo deseado */
+    color: #fff; /* Cambia esto a tu estilo de texto deseado */
+    z-index: 999; /* Asegura que el encabezado esté en la parte superior de la pila de capas */
+  }
+  .header.scrolled {
+    background-color: white;
+    transition: background-color 0.3s ease;
+  }

@@ -12,6 +12,10 @@ import { TokenService } from '../security/token.service';
 })
 export class LoginComponent implements OnInit {
 
+  mostrarFormulario1 = true;
+  mostrarFormulario2 = false;
+
+
   isLogged = false;
   isLoginFail = false;
   loginUsuario: LoginUsuario = {};
@@ -30,7 +34,7 @@ export class LoginComponent implements OnInit {
 
 
     if (this.tokenService.getToken()) {
-        this.isLogged = true;
+        this.isLogged = false;
         this.isLoginFail = false;
         this.roles = this.tokenService.getAuthorities();
    }
@@ -49,7 +53,7 @@ export class LoginComponent implements OnInit {
           this.tokenService.setOpciones(data.opciones);
 
           this.roles = data.authorities;
-          this.router.navigate(['/']);
+          this.router.navigate(['/intranet/inicio']);
 
           console.log("onLogin() >> token >>> " +  this.tokenService.getToken());
           console.log("onLogin() >> setUserName >>> " +  this.tokenService.getUserName());
